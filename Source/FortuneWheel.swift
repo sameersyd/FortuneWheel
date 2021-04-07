@@ -10,13 +10,14 @@ import SwiftUI
 @available(iOS 14.0, *)
 public struct FortuneWheel: View {
     
-    var titles: [String], size: CGFloat, strokeWidth: CGFloat, strokeColor: Color = Color(hex: "252D4F")
+    var titles: [String], size: CGFloat, onSpinEnd: ((Int) -> ())?, strokeWidth: CGFloat, strokeColor: Color = Color(hex: "252D4F")
     var colors: [Color] = Color.spin_wheel_color
     @StateObject var viewModel: FortuneWheelViewModel
     
-    public init(titles: [String], size: CGFloat, colors: [Color]? = nil,
-         strokeWidth: CGFloat = 15, strokeColor: Color? = nil,
-         animDuration: Double = Double(6), timeCurveAnimation: Animation? = nil) {
+    public init(titles: [String], size: CGFloat, onSpinEnd: ((Int) -> ())?,
+                colors: [Color]? = nil, strokeWidth: CGFloat = 15, strokeColor: Color? = nil,
+                animDuration: Double = Double(6), timeCurveAnimation: Animation? = nil) {
+        
         let animation = Animation.timingCurve(0.51, 0.97, 0.56, 0.99, duration: animDuration)
         self.titles = titles
         self.size = size
@@ -24,7 +25,8 @@ public struct FortuneWheel: View {
         self.strokeWidth = strokeWidth
         if let strokeColor = strokeColor { self.strokeColor = strokeColor }
         _viewModel = StateObject(wrappedValue: FortuneWheelViewModel(titles: titles, animDuration: animDuration,
-                                                                     timeCurveAnimation: timeCurveAnimation ?? animation))
+                                                                     timeCurveAnimation: timeCurveAnimation ?? animation,
+                                                                     onSpinEnd: onSpinEnd))
     }
     
     public var body: some View {

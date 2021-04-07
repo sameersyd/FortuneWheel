@@ -16,10 +16,13 @@ class FortuneWheelViewModel: ObservableObject {
     private var timeCurveAnimation: Animation
     private var pendingRequestWorkItem: DispatchWorkItem?
     
-    init(titles: [String], animDuration: Double, timeCurveAnimation: Animation) {
+    private var onSpinEnd: ((Int) -> ())?
+    
+    init(titles: [String], animDuration: Double, timeCurveAnimation: Animation, onSpinEnd: ((Int) -> ())?) {
         self.titles = titles
         self.animDuration = animDuration
         self.timeCurveAnimation = timeCurveAnimation
+        self.onSpinEnd = onSpinEnd
     }
     
     func spinWheel() {
@@ -32,7 +35,7 @@ class FortuneWheelViewModel: ObservableObject {
             if let count = self?.titles.count,
                let distance = self?.degree.truncatingRemainder(dividingBy: 360) {
                 let pointer = floor(distance/(360/Double(count)))
-                print(count - Int(pointer) - 1)
+                if let onSpinEnd = self?.onSpinEnd { onSpinEnd(count - Int(pointer) - 1) }
             }
         }
         // Save the new work item and execute it after duration
