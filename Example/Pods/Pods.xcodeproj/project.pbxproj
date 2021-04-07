@@ -13,7 +13,6 @@
 		73935340261DF0EF00302828 /* SpinWheelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7393533F261DF0EF00302828 /* SpinWheelCell.swift */; };
 		73935345261DF15E00302828 /* SpinWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73935344261DF15E00302828 /* SpinWheelView.swift */; };
 		7393534A261DF36900302828 /* FortuneWheelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73935349261DF36900302828 /* FortuneWheelViewModel.swift */; };
-		7393534F261DFB2800302828 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7393534E261DFB2800302828 /* Assets.xcassets */; };
 		800E364F17F9B5177499F65AEEE85F49 /* FortuneWheel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FC8F22196C0F35B78FEC821B478539EB /* FortuneWheel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		970CACFC1BCE6450ED1A364EFE6605DD /* Pods-FortuneWheel_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F8909AFE1A5A7AD53EFDAB0BB32FBFF /* Pods-FortuneWheel_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99957E74B352AA0EE37CD119D2E7E61E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
@@ -57,7 +56,6 @@
 		7393533F261DF0EF00302828 /* SpinWheelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinWheelCell.swift; sourceTree = "<group>"; };
 		73935344261DF15E00302828 /* SpinWheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinWheelView.swift; sourceTree = "<group>"; };
 		73935349261DF36900302828 /* FortuneWheelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneWheelViewModel.swift; sourceTree = "<group>"; };
-		7393534E261DFB2800302828 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79D6BCF3CDA2CF96AC7EF98397A04C8A /* FortuneWheel.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = FortuneWheel.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		8ADE086325FA16DE0BD25B8BD5E4F5E8 /* Pods-FortuneWheel_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FortuneWheel_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		8E0276A496A58FF808AE89189D2F045A /* FortuneWheel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FortuneWheel.release.xcconfig; sourceTree = "<group>"; };
@@ -199,7 +197,6 @@
 		7F3F3A6726E0D60D66F6E1A06E8ACA29 /* FortuneWheel */ = {
 			isa = PBXGroup;
 			children = (
-				7393534E261DFB2800302828 /* Assets.xcassets */,
 				7393531B261DEF0600302828 /* Source */,
 				7B1DEFFB94A377AC8FBF55072F2F875E /* Pod */,
 				7D913ABA5B1CFA10F41878CAD0468426 /* Support Files */,
@@ -383,7 +380,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7393534F261DFB2800302828 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

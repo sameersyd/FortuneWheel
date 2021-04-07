@@ -7,6 +7,40 @@
 
 import SwiftUI
 
+struct Triangle: Shape {
+    public func path(in rect: CGRect) -> Path {
+        var path = Path()
+        path.move(to: CGPoint(x: rect.midX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.midX, y: rect.minY))
+        path.addCurve(to: CGPoint(x: rect.midX, y: rect.minY), control1: CGPoint(x: rect.maxX, y: rect.minY), control2: CGPoint(x: rect.midX, y: rect.minY))
+        return path
+    }
+}
+
+struct SpinWheelPointer: View {
+    var pointerColor: Color
+    var body: some View {
+        Triangle().frame(width: 50, height: 50)
+            .foregroundColor(pointerColor).cornerRadius(24)
+            .rotationEffect(.init(degrees: 180))
+            .shadow(color: Color(hex: "212121", alpha: 0.5), radius: 5, x: 0.0, y: 1.0)
+    }
+}
+
+struct SpinWheelBolt: View {
+    var body: some View {
+        ZStack {
+            Circle().frame(width: 28, height: 28)
+                .foregroundColor(Color(hex: "F4C25B"))
+            Circle().frame(width: 18, height: 18)
+                .foregroundColor(Color(hex: "FFD25A"))
+                .shadow(color: Color(hex: "404040", alpha: 0.35), radius: 3, x: 0.0, y: 1.0)
+        }
+    }
+}
+
 struct SpinWheelView: View {
     
     var data: [Double], labels: [String]
@@ -25,7 +59,7 @@ struct SpinWheelView: View {
             ZStack(alignment: .center) {
                 ForEach(0..<data.count) { index in
                     SpinWheelCell(startAngle: startAngle(for: index), endAngle: endAngle(for: index))
-                        .fill(colors[index])
+                        .fill(colors[index % colors.count])
                     Text(labels[index]).foregroundColor(Color.white)
                         .offset(viewOffset(for: index, in: geo.size)).zIndex(1)
                 }

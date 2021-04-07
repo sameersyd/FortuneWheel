@@ -11,17 +11,18 @@ import SwiftUI
 public struct FortuneWheel: View {
     
     var titles: [String], size: CGFloat, onSpinEnd: ((Int) -> ())?, strokeWidth: CGFloat, strokeColor: Color = Color(hex: "252D4F")
-    var colors: [Color] = Color.spin_wheel_color
+    var colors: [Color] = Color.spin_wheel_color, pointerColor: Color = Color(hex: "DA4533")
     @StateObject var viewModel: FortuneWheelViewModel
     
     public init(titles: [String], size: CGFloat, onSpinEnd: ((Int) -> ())?,
-                colors: [Color]? = nil, strokeWidth: CGFloat = 15, strokeColor: Color? = nil,
+                colors: [Color]? = nil, pointerColor: Color? = nil, strokeWidth: CGFloat = 15, strokeColor: Color? = nil,
                 animDuration: Double = Double(6), timeCurveAnimation: Animation? = nil) {
         
         let animation = Animation.timingCurve(0.51, 0.97, 0.56, 0.99, duration: animDuration)
         self.titles = titles
         self.size = size
         if let colors = colors { self.colors = colors }
+        if let pointerColor = pointerColor { self.pointerColor = pointerColor }
         self.strokeWidth = strokeWidth
         if let strokeColor = strokeColor { self.strokeColor = strokeColor }
         _viewModel = StateObject(wrappedValue: FortuneWheelViewModel(titles: titles, animDuration: animDuration,
@@ -49,19 +50,14 @@ public struct FortuneWheel: View {
                             viewModel.spinWheel()
                         })
                     )
-                Image.fortune_wheel_bolt.resizable().frame(width: 28, height: 28)
+                SpinWheelBolt()
             }
-            Image.fortune_wheel_pointer.resizable().frame(width: 65, height: 65).offset(x: 0, y: -25)
+            SpinWheelPointer(pointerColor: pointerColor).offset(x: 0, y: -25)
         }
     }
 }
 
-fileprivate extension Image {
-    static let fortune_wheel_bolt = Image("fortune_wheel_bolt")
-    static let fortune_wheel_pointer = Image("fortune_wheel_pointer")
-}
-
-fileprivate extension Color {
+extension Color {
     
     static let spin_wheel_color: [Color] = [Color(hex: "FBE488"), Color(hex: "75AB53"), Color(hex: "D1DC59"),
                                             Color(hex: "EC9D42"), Color(hex: "DE6037"), Color(hex: "DA4533"),
