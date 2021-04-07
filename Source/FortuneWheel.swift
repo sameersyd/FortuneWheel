@@ -10,17 +10,21 @@ import SwiftUI
 @available(iOS 14.0, *)
 public struct FortuneWheel: View {
     
-    var titles: [String], colors: [Color], strokeWidth: CGFloat, strokeColor: Color
+    var titles: [String], size: CGFloat, strokeWidth: CGFloat, strokeColor: Color = Color(hex: "252D4F")
+    var colors: [Color] = Color.spin_wheel_color
     @StateObject var viewModel: FortuneWheelViewModel
     
-    init(titles: [String], colors: [Color] = Color.spin_wheel_color, strokeWidth: CGFloat = 15, strokeColor: Color = Color(hex: "252D4F"),
+    public init(titles: [String], size: CGFloat, colors: [Color]? = nil,
+         strokeWidth: CGFloat = 15, strokeColor: Color? = nil,
          animDuration: Double = Double(6), timeCurveAnimation: Animation? = nil) {
+        let animation = Animation.timingCurve(0.51, 0.97, 0.56, 0.99, duration: animDuration)
         self.titles = titles
-        self.colors = colors
+        self.size = size
+        if let colors = colors { self.colors = colors }
         self.strokeWidth = strokeWidth
-        self.strokeColor = strokeColor
+        if let strokeColor = strokeColor { self.strokeColor = strokeColor }
         _viewModel = StateObject(wrappedValue: FortuneWheelViewModel(titles: titles, animDuration: animDuration,
-                                                                     timeCurveAnimation: timeCurveAnimation ?? Animation.timingCurve(0.51, 0.97, 0.56, 0.99, duration: animDuration)))
+                                                                     timeCurveAnimation: timeCurveAnimation ?? animation))
     }
     
     public var body: some View {
@@ -28,9 +32,9 @@ public struct FortuneWheel: View {
             ZStack(alignment: .center) {
                 SpinWheelView(data: (0..<titles.count).map { _ in Double(100/titles.count) },
                               labels: titles, colors: colors)
-                    .frame(width: 320, height: 320)
+                    .frame(width: size, height: size)
                     .overlay(
-                        RoundedRectangle(cornerRadius: 160).stroke(lineWidth: strokeWidth)
+                        RoundedRectangle(cornerRadius: size/2).stroke(lineWidth: strokeWidth)
                             .foregroundColor(strokeColor)
                     )
                     .rotationEffect(.degrees(viewModel.degree))
