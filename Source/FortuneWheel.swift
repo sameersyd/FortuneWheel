@@ -14,20 +14,18 @@ public struct FortuneWheel: View {
     var colors: [Color] = Color.spin_wheel_color, pointerColor: Color = Color(hex: "DA4533")
     @StateObject var viewModel: FortuneWheelViewModel
     
-    public init(titles: [String], size: CGFloat, onSpinEnd: ((Int) -> ())?,
-                colors: [Color]? = nil, pointerColor: Color? = nil, strokeWidth: CGFloat = 15, strokeColor: Color? = nil,
-                animDuration: Double = Double(6), timeCurveAnimation: Animation? = nil) {
+    public init(titles: [String], size: CGFloat, onSpinEnd: ((Int) -> ())?, colors: [Color]? = nil, pointerColor: Color? = nil, strokeWidth: CGFloat = 15, strokeColor: Color? = nil, animDuration: Double = Double(6), timeCurveAnimation: Animation? = nil) {
         
-        let animation = Animation.timingCurve(0.51, 0.97, 0.56, 0.99, duration: animDuration)
         self.titles = titles
         self.size = size
+        self.strokeWidth = strokeWidth
+        
         if let colors = colors { self.colors = colors }
         if let pointerColor = pointerColor { self.pointerColor = pointerColor }
-        self.strokeWidth = strokeWidth
         if let strokeColor = strokeColor { self.strokeColor = strokeColor }
-        _viewModel = StateObject(wrappedValue: FortuneWheelViewModel(titles: titles, animDuration: animDuration,
-                                                                     timeCurveAnimation: timeCurveAnimation ?? animation,
-                                                                     onSpinEnd: onSpinEnd))
+        
+        let animation = Animation.timingCurve(0.51, 0.97, 0.56, 0.99, duration: animDuration)
+        _viewModel = StateObject(wrappedValue: FortuneWheelViewModel(titles: titles, animDuration: animDuration, timeCurveAnimation: timeCurveAnimation ?? animation, onSpinEnd: onSpinEnd))
     }
     
     public var body: some View {
