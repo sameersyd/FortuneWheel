@@ -24,26 +24,36 @@ public struct FortuneWheel: View {
     }
     
     public var body: some View {
-        ZStack {
-            SpinWheelView(data: (0..<titles.count).map { _ in Double(100/titles.count) },
-                          labels: titles, colors: colors)
-                .frame(width: 320, height: 320)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 160).stroke(lineWidth: strokeWidth)
-                        .foregroundColor(strokeColor)
-                )
-                .rotationEffect(.degrees(viewModel.degree))
-                .gesture(
-                    DragGesture().onChanged({ (value) in
-                        if value.translation.width < 0 {
-                            viewModel.degree = Double(-value.translation.width)
-                        }
-                    }).onEnded({ (value) in
-                        viewModel.spinWheel()
-                    })
-                )
+        ZStack(alignment: .top) {
+            ZStack(alignment: .center) {
+                SpinWheelView(data: (0..<titles.count).map { _ in Double(100/titles.count) },
+                              labels: titles, colors: colors)
+                    .frame(width: 320, height: 320)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 160).stroke(lineWidth: strokeWidth)
+                            .foregroundColor(strokeColor)
+                    )
+                    .rotationEffect(.degrees(viewModel.degree))
+                    .gesture(
+                        DragGesture().onChanged({ (value) in
+                            if value.translation.width < 0 {
+                                viewModel.degree = Double(-value.translation.width)
+                            }
+                        }).onEnded({ (value) in
+                            viewModel.spinWheel()
+                        })
+                    )
+                Image.fortune_wheel_bolt.resizable().frame(width: 28, height: 28)
+            }
+            Image.fortune_wheel_pointer.resizable().frame(width: 65, height: 65).offset(x: 0, y: -25)
         }
     }
+}
+
+@available(iOS 13.0, *)
+fileprivate extension Image {
+    static let fortune_wheel_bolt = Image("fortune_wheel_bolt")
+    static let fortune_wheel_pointer = Image("fortune_wheel_pointer")
 }
 
 @available(iOS 13.0, *)
