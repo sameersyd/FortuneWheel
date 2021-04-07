@@ -1,0 +1,16 @@
+PODS:
+  - FortuneWheel (0.1.0)
+
+DEPENDENCIES:
+  - FortuneWheel (from `../`)
+
+EXTERNAL SOURCES:
+  FortuneWheel:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FortuneWheel: 856cb9762eb832d0fc31d2365618233d25808716
+
+PODFILE CHECKSUM: 6ba86c8c2ecfe2dcce509cd80b66e0ace54df756
+
+COCOAPODS: 1.10.1

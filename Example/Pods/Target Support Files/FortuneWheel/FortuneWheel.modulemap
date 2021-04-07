@@ -1,0 +1,6 @@
+framework module FortuneWheel {
+  umbrella header "FortuneWheel-umbrella.h"
+
+  export *
+  module * { export * }
+}

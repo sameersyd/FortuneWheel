@@ -1,0 +1,22 @@
+{
+  "name": "FortuneWheel",
+  "version": "0.1.0",
+  "summary": "A short description of FortuneWheel.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/sameersyd/FortuneWheel",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "sameersyd": "sameer.nwaz@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/sameersyd/FortuneWheel.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "FortuneWheel/Classes/**/*"
+}
