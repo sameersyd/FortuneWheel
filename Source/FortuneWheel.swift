@@ -54,13 +54,11 @@ public struct FortuneWheel: View {
     }
 }
 
-@available(iOS 13.0, *)
 fileprivate extension Image {
     static let fortune_wheel_bolt = Image("fortune_wheel_bolt")
     static let fortune_wheel_pointer = Image("fortune_wheel_pointer")
 }
 
-@available(iOS 13.0, *)
 fileprivate extension Color {
     
     static let spin_wheel_color: [Color] = [Color(hex: "FBE488"), Color(hex: "75AB53"), Color(hex: "D1DC59"),

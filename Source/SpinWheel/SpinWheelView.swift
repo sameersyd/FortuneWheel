@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-@available(iOS 13.0, *)
 struct SpinWheelView: View {
     
     var data: [Double], labels: [String]
