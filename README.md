@@ -11,7 +11,7 @@ Fortune spinning wheel 🎡, cocoapods library built using SwiftUI, supports dyn
 <br />
 
 ## Preview - Spin Wheel ⚙️
-<img src="https://github.com/sameersyd/FortuneWheel/blob/master/art/iPhone-preview.png" height="600">
+![gif](https://github.com/sameersyd/FortuneWheel/blob/master/art/preview-wheel.gif)
 
 <br />
 
