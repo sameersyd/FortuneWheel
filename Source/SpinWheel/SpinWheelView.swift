@@ -60,7 +60,7 @@ struct SpinWheelView: View {
                 ForEach(0..<data.count) { index in
                     SpinWheelCell(startAngle: startAngle(for: index), endAngle: endAngle(for: index))
                         .fill(colors[index % colors.count])
-                    Text(labels[index]).foregroundColor(Color.white)
+                    Text(labels[index]).foregroundColor(Color.white).fontWeight(.bold)
                         .offset(viewOffset(for: index, in: geo.size)).zIndex(1)
                 }
             }

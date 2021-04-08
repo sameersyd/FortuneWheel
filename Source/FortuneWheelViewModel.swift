@@ -13,21 +13,21 @@ class FortuneWheelViewModel: ObservableObject {
     
     @Published var degree = 0.0
     private let animDuration: Double
-    private var timeCurveAnimation: Animation
+    private var animation: Animation
     private var pendingRequestWorkItem: DispatchWorkItem?
     
     private var onSpinEnd: ((Int) -> ())?
     
-    init(titles: [String], animDuration: Double, timeCurveAnimation: Animation, onSpinEnd: ((Int) -> ())?) {
+    init(titles: [String], animDuration: Double, animation: Animation, onSpinEnd: ((Int) -> ())?) {
         self.titles = titles
         self.animDuration = animDuration
-        self.timeCurveAnimation = timeCurveAnimation
+        self.animation = animation
         self.onSpinEnd = onSpinEnd
     }
     
     func spinWheel() {
         let d = Double.random(in: 720...7200)
-        withAnimation(timeCurveAnimation) { self.degree += d }
+        withAnimation(animation) { self.degree += d }
         // Cancel the currently pending item
         pendingRequestWorkItem?.cancel()
         // Wrap our request in a work item
