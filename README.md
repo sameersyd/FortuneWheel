@@ -78,7 +78,7 @@ struct ContentView: View {
     <td>colors</td>
     <td>true</td>
     <td>[Color]</td>
-    <td>Default Color codes[]</td>
+    <td>Color hex ["FBE488", "75AB53", "D1DC59", "EC9D42", "DE6037", "DA4533", "992C4D", "433589", "4660A8", "4291C8"]</td>
   </tr>
   <tr>
     <td>pointerColor</td>
@@ -109,7 +109,7 @@ struct ContentView: View {
 
 ## Contribute
 If you want to contribute to this app, you're always welcome!
-See [Contributing Guidelines](https://github.com/sameersyd/FortuneWheel/blob/main/CONTRIBUTION.md). 
+See [Contributing Guidelines](https://github.com/sameersyd/FortuneWheel/blob/master/CONTRIBUTION.md).
 
 
 ## Donation
