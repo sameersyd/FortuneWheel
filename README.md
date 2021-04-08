@@ -36,9 +36,7 @@ Import Fortune Wheel in your class
 import FortuneWheel
 ```
 
-<br />
-
-## Sample Code for Fortune Wheel 🌟 
+## Sample Code 🌟 
 
 ```swift
 struct ContentView: View {
@@ -56,7 +54,7 @@ struct ContentView: View {
 <br />
 
 ## Note:
-#### When used custom animation provide it duration in `animDuration` parameter
+#### When custom animation is used, provide it's duration in `animDuration` parameter
 #### Change the `animDuration` only if custom animation is used, or it may cause delay in pointer result.
 
 <br />
