@@ -48,7 +48,11 @@ struct ContentView: View {
 }
 ```
 
-## Motion Toast View
+## Note:
+#### When used custom animation provide it duration in `animDuration` parameter
+#### Change the `animDuration` only if custom animation is used, or it may cause delay in pointer result.
+
+## Fortune Wheel properties
 <table style="width:100%">
   <tr>
     <th>Parameter</th>
@@ -97,6 +101,12 @@ struct ContentView: View {
     <td>true</td>
     <td>Color</td>
     <td>Color(hex: "252D4F")</td>
+  </tr>
+  <tr>
+    <td>animDuration</td>
+    <td>true</td>
+    <td>Double</td>
+    <td>6</td>
   </tr>
   <tr>
     <td>animation</td>
