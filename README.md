@@ -6,7 +6,8 @@
 ![GitHub Cards Preview](https://github.com/sameersyd/FortuneWheel/blob/master/art/GITHUB-COVER.png?raw=true)
 
 # Fortune Wheel
-Fortune spinning wheel 🎡, cocoapods library built using SwiftUI, supports dynamic content. *Made with love ❤️ by [Sameer Nawaz](https://github.com/sameersyd)*
+Fortune spinning wheel 🎡, cocoapods library built using SwiftUI, supports dynamic content.
+*Made with love ❤️ by [Sameer Nawaz](https://github.com/sameersyd)*
 
 <br />
 
@@ -18,6 +19,8 @@ Fortune spinning wheel 🎡, cocoapods library built using SwiftUI, supports dyn
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+<br />
 
 ## Installation
 
@@ -32,6 +35,8 @@ Import Fortune Wheel in your class
 ```ruby
 import FortuneWheel
 ```
+
+<br />
 
 ## Sample Code for Fortune Wheel 🌟 
 
@@ -48,9 +53,13 @@ struct ContentView: View {
 }
 ```
 
+<br />
+
 ## Note:
 #### When used custom animation provide it duration in `animDuration` parameter
 #### Change the `animDuration` only if custom animation is used, or it may cause delay in pointer result.
+
+<br />
 
 ## Fortune Wheel properties
 <table style="width:100%">
@@ -116,21 +125,30 @@ struct ContentView: View {
   </tr>
 </table>
 
+<br />
+
+## UI Design 🎨
+The UI for this Fortune Wheel library was designed by <a href="https://github.com/Spikeysanju">@Spikeysanju</a>
+
+<br />
 
 ## Contribute
 If you want to contribute to this app, you're always welcome!
 See [Contributing Guidelines](https://github.com/sameersyd/FortuneWheel/blob/master/CONTRIBUTION.md).
 
+<br />
 
 ## Donation
 If this project helped you reduce time to develop, you can buy me a cup of coffee :) 
 
 <a href="https://www.buymeacoffee.com/sameersyd" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
+<br />
 
 ## Author
+Sameer Nawaz, sameer.nwaz@gmail.com
 
-sameersyd, sameer.nwaz@gmail.com
+<br />
 
 ## License
 ```
