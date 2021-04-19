@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 13.0, *)
 struct Triangle: Shape {
     public func path(in rect: CGRect) -> Path {
         var path = Path()
@@ -19,6 +20,7 @@ struct Triangle: Shape {
     }
 }
 
+@available(iOS 13.0, *)
 struct SpinWheelPointer: View {
     var pointerColor: Color
     var body: some View {
@@ -29,6 +31,7 @@ struct SpinWheelPointer: View {
     }
 }
 
+@available(iOS 13.0, *)
 struct SpinWheelBolt: View {
     var body: some View {
         ZStack {
@@ -41,6 +44,7 @@ struct SpinWheelBolt: View {
     }
 }
 
+@available(iOS 13.0, *)
 struct SpinWheelView: View {
     
     var data: [Double], labels: [String]

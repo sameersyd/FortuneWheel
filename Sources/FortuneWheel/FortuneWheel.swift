@@ -57,6 +57,7 @@ public struct FortuneWheel: View {
     }
 }
 
+@available(iOS 13.0, *)
 extension Color {
     
     static let spin_wheel_color: [Color] = [Color(hex: "FBE488"), Color(hex: "75AB53"), Color(hex: "D1DC59"),
