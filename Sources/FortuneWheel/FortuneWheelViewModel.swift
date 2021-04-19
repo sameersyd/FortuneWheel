@@ -2,7 +2,7 @@
 //  FortuneWheelViewModel.swift
 //  FortuneWheel
 //
-//  Created by Sameer Nawaz on 07/04/21.
+//  Created by Sameer Nawaz on 19/04/21.
 //
 
 import SwiftUI
