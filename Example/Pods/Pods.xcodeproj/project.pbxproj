@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		2073E3DB26406A860A0D9D20ABC6F717 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		5E6C5AC34B45C5EF7155DAD81AEF7152 /* Pods-FortuneWheel_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5805CDD137A227096819B670FE8BC83B /* Pods-FortuneWheel_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		73935339261DF06000302828 /* FortuneWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73935338261DF06000302828 /* FortuneWheel.swift */; };
-		73935340261DF0EF00302828 /* SpinWheelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7393533F261DF0EF00302828 /* SpinWheelCell.swift */; };
-		73935345261DF15E00302828 /* SpinWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73935344261DF15E00302828 /* SpinWheelView.swift */; };
-		7393534A261DF36900302828 /* FortuneWheelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73935349261DF36900302828 /* FortuneWheelViewModel.swift */; };
+		7326AAA6262DE9F100C5742F /* FortuneWheelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7326AAA5262DE9F100C5742F /* FortuneWheelViewModel.swift */; };
+		7326AAAC262DEA1500C5742F /* SpinWheelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7326AAAB262DEA1500C5742F /* SpinWheelCell.swift */; };
+		7326AAB4262DEA2700C5742F /* SpinWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7326AAB3262DEA2700C5742F /* SpinWheelView.swift */; };
+		739B6A3A262D631100A1D65F /* FortuneWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739B6A39262D631100A1D65F /* FortuneWheel.swift */; };
 		800E364F17F9B5177499F65AEEE85F49 /* FortuneWheel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FC8F22196C0F35B78FEC821B478539EB /* FortuneWheel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		970CACFC1BCE6450ED1A364EFE6605DD /* Pods-FortuneWheel_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F8909AFE1A5A7AD53EFDAB0BB32FBFF /* Pods-FortuneWheel_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99957E74B352AA0EE37CD119D2E7E61E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
@@ -52,10 +52,10 @@
 		6F8909AFE1A5A7AD53EFDAB0BB32FBFF /* Pods-FortuneWheel_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FortuneWheel_Example-umbrella.h"; sourceTree = "<group>"; };
 		72564A10841D6E8BAEC65ED3CE71FC08 /* FortuneWheel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FortuneWheel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		73935338261DF06000302828 /* FortuneWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneWheel.swift; sourceTree = "<group>"; };
-		7393533F261DF0EF00302828 /* SpinWheelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinWheelCell.swift; sourceTree = "<group>"; };
-		73935344261DF15E00302828 /* SpinWheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinWheelView.swift; sourceTree = "<group>"; };
-		73935349261DF36900302828 /* FortuneWheelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneWheelViewModel.swift; sourceTree = "<group>"; };
+		7326AAA5262DE9F100C5742F /* FortuneWheelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneWheelViewModel.swift; sourceTree = "<group>"; };
+		7326AAAB262DEA1500C5742F /* SpinWheelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinWheelCell.swift; sourceTree = "<group>"; };
+		7326AAB3262DEA2700C5742F /* SpinWheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinWheelView.swift; sourceTree = "<group>"; };
+		739B6A39262D631100A1D65F /* FortuneWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FortuneWheel.swift; sourceTree = "<group>"; };
 		79D6BCF3CDA2CF96AC7EF98397A04C8A /* FortuneWheel.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = FortuneWheel.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		8ADE086325FA16DE0BD25B8BD5E4F5E8 /* Pods-FortuneWheel_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FortuneWheel_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		8E0276A496A58FF808AE89189D2F045A /* FortuneWheel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FortuneWheel.release.xcconfig; sourceTree = "<group>"; };
@@ -150,23 +150,31 @@
 			path = "Target Support Files/Pods-FortuneWheel_Example";
 			sourceTree = "<group>";
 		};
-		7393531B261DEF0600302828 /* Source */ = {
+		7326AAAA262DEA0300C5742F /* SpinWheel */ = {
 			isa = PBXGroup;
 			children = (
-				7393533E261DF0CF00302828 /* SpinWheel */,
-				73935338261DF06000302828 /* FortuneWheel.swift */,
-				73935349261DF36900302828 /* FortuneWheelViewModel.swift */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		7393533E261DF0CF00302828 /* SpinWheel */ = {
-			isa = PBXGroup;
-			children = (
-				7393533F261DF0EF00302828 /* SpinWheelCell.swift */,
-				73935344261DF15E00302828 /* SpinWheelView.swift */,
+				7326AAAB262DEA1500C5742F /* SpinWheelCell.swift */,
+				7326AAB3262DEA2700C5742F /* SpinWheelView.swift */,
 			);
 			path = SpinWheel;
+			sourceTree = "<group>";
+		};
+		739B6A37262D631100A1D65F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				739B6A38262D631100A1D65F /* FortuneWheel */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		739B6A38262D631100A1D65F /* FortuneWheel */ = {
+			isa = PBXGroup;
+			children = (
+				7326AAAA262DEA0300C5742F /* SpinWheel */,
+				739B6A39262D631100A1D65F /* FortuneWheel.swift */,
+				7326AAA5262DE9F100C5742F /* FortuneWheelViewModel.swift */,
+			);
+			path = FortuneWheel;
 			sourceTree = "<group>";
 		};
 		7B1DEFFB94A377AC8FBF55072F2F875E /* Pod */ = {
@@ -197,7 +205,7 @@
 		7F3F3A6726E0D60D66F6E1A06E8ACA29 /* FortuneWheel */ = {
 			isa = PBXGroup;
 			children = (
-				7393531B261DEF0600302828 /* Source */,
+				739B6A37262D631100A1D65F /* Sources */,
 				7B1DEFFB94A377AC8FBF55072F2F875E /* Pod */,
 				7D913ABA5B1CFA10F41878CAD0468426 /* Support Files */,
 			);
@@ -413,11 +421,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7393534A261DF36900302828 /* FortuneWheelViewModel.swift in Sources */,
-				73935345261DF15E00302828 /* SpinWheelView.swift in Sources */,
-				73935340261DF0EF00302828 /* SpinWheelCell.swift in Sources */,
+				7326AAB4262DEA2700C5742F /* SpinWheelView.swift in Sources */,
+				739B6A3A262D631100A1D65F /* FortuneWheel.swift in Sources */,
 				FD7EB52082E6FA1A4CCD74AA51A5F288 /* FortuneWheel-dummy.m in Sources */,
-				73935339261DF06000302828 /* FortuneWheel.swift in Sources */,
+				7326AAAC262DEA1500C5742F /* SpinWheelCell.swift in Sources */,
+				7326AAA6262DE9F100C5742F /* FortuneWheelViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

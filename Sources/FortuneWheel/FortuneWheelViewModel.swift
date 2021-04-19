@@ -2,11 +2,12 @@
 //  FortuneWheelViewModel.swift
 //  FortuneWheel
 //
-//  Created by Sameer Nawaz on 07/04/21.
+//  Created by Sameer Nawaz on 19/04/21.
 //
 
 import SwiftUI
 
+@available(iOS 13.0, *)
 class FortuneWheelViewModel: ObservableObject {
     
     var titles: [String]

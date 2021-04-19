@@ -10,6 +10,8 @@ import SwiftUI
 @available(iOS 14.0, *)
 public struct FortuneWheel: View {
     
+    var text = "Hello, World!"
+    
     var titles: [String], size: CGFloat, onSpinEnd: ((Int) -> ())?, strokeWidth: CGFloat, strokeColor: Color = Color(hex: "252D4F")
     var colors: [Color] = Color.spin_wheel_color, pointerColor: Color = Color(hex: "DA4533")
     @StateObject var viewModel: FortuneWheelViewModel
@@ -55,6 +57,7 @@ public struct FortuneWheel: View {
     }
 }
 
+@available(iOS 13.0, *)
 extension Color {
     
     static let spin_wheel_color: [Color] = [Color(hex: "FBE488"), Color(hex: "75AB53"), Color(hex: "D1DC59"),
