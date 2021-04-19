@@ -3,11 +3,10 @@
 [![License](https://img.shields.io/cocoapods/l/FortuneWheel.svg?style=flat)](https://cocoapods.org/pods/FortuneWheel)
 [![Platform](https://img.shields.io/cocoapods/p/FortuneWheel.svg?style=flat)](https://cocoapods.org/pods/FortuneWheel)
 
-![GitHub Cards Preview](https://github.com/sameersyd/FortuneWheel/blob/master/art/GITHUB-COVER.png?raw=true)
+![GitHub Cards Preview](https://github.com/sameersyd/FortuneWheel/blob/master/art/GITHUB-COVER-SPM.png?raw=true)
 
 # Fortune Wheel
-Fortune spinning wheel 🎡, cocoapods library built using SwiftUI, supports dynamic content.
-*Made with love ❤️ by [Sameer Nawaz](https://github.com/sameersyd)*
+Fortune spinning wheel 🎡 library built using SwiftUI, supports dynamic content.
 
 <br />
 
@@ -16,13 +15,7 @@ Fortune spinning wheel 🎡, cocoapods library built using SwiftUI, supports dyn
 
 <br />
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-<br />
-
-## Installation
+## CocoaPods Installation
 
 FortuneWheel is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
@@ -31,12 +24,24 @@ it, simply add the following line to your Podfile:
 pod 'FortuneWheel'
 ```
 
-Import Fortune Wheel in your class
+<br />
+
+## Swift Package Manager
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/sameersyd/FortuneWheel.git", .upToNextMajor(from: "0.1.4"))
+]
+```
+
+<br />
+
+## Sample Code 🌟 
+
+Import Fortune Wheel in your file
 ```ruby
 import FortuneWheel
 ```
-
-## Sample Code 🌟 
 
 ```swift
 struct ContentView: View {
