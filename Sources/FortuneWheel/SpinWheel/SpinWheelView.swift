@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(macOS 10.15, *)
 @available(iOS 13.0, *)
 struct Triangle: Shape {
     public func path(in rect: CGRect) -> Path {
@@ -20,6 +21,7 @@ struct Triangle: Shape {
     }
 }
 
+@available(macOS 10.15, *)
 @available(iOS 13.0, *)
 struct SpinWheelPointer: View {
     var pointerColor: Color
@@ -31,6 +33,7 @@ struct SpinWheelPointer: View {
     }
 }
 
+@available(macOS 10.15, *)
 @available(iOS 13.0, *)
 struct SpinWheelBolt: View {
     var body: some View {
@@ -44,6 +47,7 @@ struct SpinWheelBolt: View {
     }
 }
 
+@available(macOS 10.15, *)
 @available(iOS 13.0, *)
 struct SpinWheelView: View {
     
@@ -51,12 +55,14 @@ struct SpinWheelView: View {
     
     private let colors: [Color]
     private let sliceOffset: Double = -.pi / 2
+    @available(macOS 10.15, *)
     
     init(data: [Double], labels: [String], colors: [Color]) {
         self.data = data
         self.labels = labels
         self.colors = colors
     }
+    @available(macOS 10.15.0, *)
     
     var body: some View {
         GeometryReader { geo in
