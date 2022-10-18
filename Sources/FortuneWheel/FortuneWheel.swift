@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(macOS 11.0, *)
 @available(iOS 14.0, *)
 public struct FortuneWheel: View {
 
@@ -66,6 +67,7 @@ public struct FortuneWheel: View {
     }
 }
 
+@available(macOS 10.15, *)
 @available(iOS 13.0, *)
 extension Color {
     static let spin_wheel_color: [Color] = [
