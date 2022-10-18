@@ -19,7 +19,10 @@ class FortuneWheelViewModel: ObservableObject {
     
     private var onSpinEnd: ((Int) -> ())?, getWheelItemIndex: (() -> (Int))?
     
-    init(titles: [String], animDuration: Double, animation: Animation, onSpinEnd: ((Int) -> ())?, getWheelItemIndex: (() -> (Int))?) {
+    init(
+        titles: [String], animDuration: Double, animation: Animation,
+        onSpinEnd: ((Int) -> ())?, getWheelItemIndex: (() -> (Int))?
+    ) {
         self.titles = titles
         self.animDuration = animDuration
         self.animation = animation
@@ -47,7 +50,9 @@ class FortuneWheelViewModel: ObservableObject {
     }
     
     func spinWheel() {
-        withAnimation(animation) { self.degree += self.getWheelStopDegree() }
+        withAnimation(animation) {
+            self.degree = (360 * (self.degree / 360)) + getWheelStopDegree();
+        }
         // Cancel the currently pending item
         pendingRequestWorkItem?.cancel()
         // Wrap our request in a work item
