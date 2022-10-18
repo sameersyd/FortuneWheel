@@ -31,9 +31,9 @@ class FortuneWheelViewModel: ObservableObject {
     }
 
     private func getWheelStopDegree() -> Double {
-        var index: Int? = nil;
+        var index = -1;
         if let method = getWheelItemIndex { index = method() }
-        if index == nil || index! >= titles.count { index = Int.random(in: 0..<titles.count) }
+        if index < 0 || index >= titles.count { index = Int.random(in: 0..<titles.count) }
         /*
          itemRange - Each items degree range (For 4, each will have 360 / 4 = 90 degrees)
          indexDegree - No. of 90 degrees to reach i item
@@ -42,7 +42,7 @@ class FortuneWheelViewModel: ObservableObject {
          finalDegree - Final exact degree to spin and stop in the index
          */
         let itemRange = 360 / titles.count;
-        let indexDegree = itemRange * index!;
+        let indexDegree = itemRange * index;
         let freeRange = Int.random(in: 0...itemRange);
         let freeSpins = (2...20).map({ return $0 * 360 }).randomElement()!
         let finalDegree = freeSpins + indexDegree + freeRange;
