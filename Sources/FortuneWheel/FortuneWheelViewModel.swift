@@ -34,13 +34,13 @@ class FortuneWheelViewModel: ObservableObject {
         /*
          itemRange - Each items degree range (For 4, each will have 360 / 4 = 90 degrees)
          indexDegree - No. of 90 degrees to reach i item
-         freeRange - Flexible degrees in the item (between those 90, -45...45), so the pointer doesn't always point in the middle at item
+         freeRange - Flexible degree in the item, so the pointer doesn't always point start of the item
          freeSpins - No. of spins before it goes to selected item index
          finalDegree - Final exact degree to spin and stop in the index
          */
         let itemRange = 360 / titles.count;
         let indexDegree = itemRange * index!;
-        let freeRange = Int.random(in: ((itemRange / 2) * -1)...(itemRange / 2));
+        let freeRange = Int.random(in: 0...itemRange);
         let freeSpins = (2...20).map({ return $0 * 360 }).randomElement()!
         let finalDegree = freeSpins + indexDegree + freeRange;
         return Double(finalDegree);

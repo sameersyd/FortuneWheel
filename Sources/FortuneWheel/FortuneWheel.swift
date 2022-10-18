@@ -68,11 +68,13 @@ public struct FortuneWheel: View {
 
 @available(iOS 13.0, *)
 extension Color {
-    
-    static let spin_wheel_color: [Color] = [Color(hex: "FBE488"), Color(hex: "75AB53"), Color(hex: "D1DC59"),
-                                            Color(hex: "EC9D42"), Color(hex: "DE6037"), Color(hex: "DA4533"),
-                                            Color(hex: "992C4D"), Color(hex: "433589"), Color(hex: "4660A8"),
-                                            Color(hex: "4291C8")]
+    static let spin_wheel_color: [Color] = [
+        Color(hex: "FBE488"), Color(hex: "75AB53"),
+        Color(hex: "D1DC59"), Color(hex: "EC9D42"),
+        Color(hex: "DE6037"), Color(hex: "DA4533"),
+        Color(hex: "992C4D"), Color(hex: "433589"),
+        Color(hex: "4660A8"), Color(hex: "4291C8")
+    ]
     
     init(hex: String, alpha: Double = 1) {
         var cString: String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
