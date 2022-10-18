@@ -9,15 +9,18 @@ import SwiftUI
 
 @available(iOS 14.0, *)
 public struct FortuneWheel: View {
-    
-    var text = "Hello, World!"
-    
-    var titles: [String], size: CGFloat, onSpinEnd: ((Int) -> ())?, strokeWidth: CGFloat, strokeColor: Color = Color(hex: "252D4F")
-    var colors: [Color] = Color.spin_wheel_color, pointerColor: Color = Color(hex: "DA4533")
+
+    private var titles: [String], size: CGFloat, onSpinEnd: ((Int) -> ())?, strokeWidth: CGFloat, strokeColor: Color = Color(hex: "252D4F")
+    private var colors: [Color] = Color.spin_wheel_color, pointerColor: Color = Color(hex: "DA4533")
     @StateObject var viewModel: FortuneWheelViewModel
     
-    public init(titles: [String], size: CGFloat, onSpinEnd: ((Int) -> ())?, colors: [Color]? = nil, pointerColor: Color? = nil, strokeWidth: CGFloat = 15, strokeColor: Color? = nil, animDuration: Double = Double(6), animation: Animation? = nil) {
-        
+    public init(
+        titles: [String], size: CGFloat, onSpinEnd: ((Int) -> ())?,
+        colors: [Color]? = nil, pointerColor: Color? = nil,
+        strokeWidth: CGFloat = 15, strokeColor: Color? = nil,
+        animDuration: Double = Double(6), animation: Animation? = nil,
+        getWheelItemIndex: (() -> (Int))? = nil
+    ) {
         self.titles = titles
         self.size = size
         self.strokeWidth = strokeWidth
@@ -27,7 +30,13 @@ public struct FortuneWheel: View {
         if let strokeColor = strokeColor { self.strokeColor = strokeColor }
         
         let timeCurveAnimation = Animation.timingCurve(0.51, 0.97, 0.56, 0.99, duration: animDuration)
-        _viewModel = StateObject(wrappedValue: FortuneWheelViewModel(titles: titles, animDuration: animDuration, animation: animation ?? timeCurveAnimation, onSpinEnd: onSpinEnd))
+        _viewModel = StateObject(wrappedValue: FortuneWheelViewModel(
+            titles: titles,
+            animDuration: animDuration,
+            animation: animation ?? timeCurveAnimation,
+            onSpinEnd: onSpinEnd,
+            getWheelItemIndex: getWheelItemIndex
+        ))
     }
     
     public var body: some View {
@@ -79,9 +88,3 @@ extension Color {
         self.init(.sRGB, red: Double(r) / 0xff, green: Double(g) / 0xff, blue:  Double(b) / 0xff, opacity: alpha)
     }
 }
-
-//struct FortuneWheel_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FortuneWheel()
-//    }
-//}
