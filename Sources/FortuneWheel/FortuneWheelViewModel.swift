@@ -51,7 +51,7 @@ class FortuneWheelViewModel: ObservableObject {
     
     func spinWheel() {
         withAnimation(animation) {
-            self.degree = (360 * (self.degree / 360)) + getWheelStopDegree();
+            self.degree = Double(360 * Int(self.degree / 360)) + getWheelStopDegree();
         }
         // Cancel the currently pending item
         pendingRequestWorkItem?.cancel()
