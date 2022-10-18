@@ -34,6 +34,7 @@ class FortuneWheelViewModel: ObservableObject {
         var index = -1;
         if let method = getWheelItemIndex { index = method() }
         if index < 0 || index >= titles.count { index = Int.random(in: 0..<titles.count) }
+        index = titles.count - index - 1;
         /*
          itemRange - Each items degree range (For 4, each will have 360 / 4 = 90 degrees)
          indexDegree - No. of 90 degrees to reach i item
