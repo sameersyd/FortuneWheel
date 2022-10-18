@@ -50,8 +50,12 @@ struct ContentView: View {
 		ZStack {
 			FortuneWheel(titles: players, size: 320, onSpinEnd: { index in
 				// your action here - based on index
-			})
+			}, getWheelItemIndex: getWheelItemIndex)
 		}
+	}
+	
+	private func getWheelItemIndex() -> Int {
+		return index
 	}
 }
 ```
@@ -61,6 +65,7 @@ struct ContentView: View {
 ## Note:
 #### When custom animation is used, provide it's duration in `animDuration` parameter
 #### Change the `animDuration` only if custom animation is used, or it may cause delay in pointer result.
+#### Function `getWheelItemIndex` will be called everytime wheel is spinned. If it's nil or provides invalid index, random element will be selected.
 
 <br />
 
@@ -125,6 +130,12 @@ struct ContentView: View {
     <td>true</td>
     <td>Animation</td>
     <td>Animation.timingCurve(0.51, 0.97, 0.56, 0.99, duration: 6)</td>
+  </tr>
+  <tr>
+    <td>getWheelItemIndex</td>
+    <td>true</td>
+    <td>() -> (Int)</td>
+    <td>nil</td>
   </tr>
 </table>
 
