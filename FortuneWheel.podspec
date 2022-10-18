@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FortuneWheel'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = 'Fortune spinning wheel library built using SwiftUI, supports dynamic content'
 
 # This description is used to generate tags and improve search results.
