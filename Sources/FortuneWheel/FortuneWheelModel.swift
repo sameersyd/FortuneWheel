@@ -40,7 +40,7 @@ public struct FortuneWheelModel {
         self.strokeWidth = strokeWidth
         self.strokeColor = strokeColor ?? Color(hex: "252D4F")
         self.animDuration = animDuration
-        self.animation = animation ?? Animation.timingCurve(0.51, 0.97, 0.56, 0.99, duration: animDuration)
+        self.animation = animation ?? Animation.timingCurve(0.51, 0.97, 0.56, 1, duration: animDuration)
         self.getWheelItemIndex = getWheelItemIndex
     }
 }
