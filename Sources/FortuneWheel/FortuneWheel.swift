@@ -9,46 +9,27 @@ import SwiftUI
 
 @available(macOS 11.0, *)
 @available(iOS 14.0, *)
+
 public struct FortuneWheel: View {
 
-    private var titles: [String], size: CGFloat, onSpinEnd: ((Int) -> ())?, strokeWidth: CGFloat, strokeColor: Color = Color(hex: "252D4F")
-    private var colors: [Color] = Color.spin_wheel_color, pointerColor: Color = Color(hex: "DA4533")
-    @StateObject var viewModel: FortuneWheelViewModel
+    private let model: FortuneWheelModel
+    @StateObject private var viewModel: FortuneWheelViewModel
     
-    public init(
-        titles: [String], size: CGFloat, onSpinEnd: ((Int) -> ())?,
-        colors: [Color]? = nil, pointerColor: Color? = nil,
-        strokeWidth: CGFloat = 15, strokeColor: Color? = nil,
-        animDuration: Double = Double(6), animation: Animation? = nil,
-        getWheelItemIndex: (() -> (Int))? = nil
-    ) {
-        self.titles = titles
-        self.size = size
-        self.strokeWidth = strokeWidth
-        
-        if let colors = colors { self.colors = colors }
-        if let pointerColor = pointerColor { self.pointerColor = pointerColor }
-        if let strokeColor = strokeColor { self.strokeColor = strokeColor }
-        
-        let timeCurveAnimation = Animation.timingCurve(0.51, 0.97, 0.56, 0.99, duration: animDuration)
-        _viewModel = StateObject(wrappedValue: FortuneWheelViewModel(
-            titles: titles,
-            animDuration: animDuration,
-            animation: animation ?? timeCurveAnimation,
-            onSpinEnd: onSpinEnd,
-            getWheelItemIndex: getWheelItemIndex
-        ))
+    public init(model: FortuneWheelModel) {
+        self.model = model
+        _viewModel = StateObject(wrappedValue: FortuneWheelViewModel(model: model))
     }
     
     public var body: some View {
         ZStack(alignment: .top) {
             ZStack(alignment: .center) {
-                SpinWheelView(data: (0..<titles.count).map { _ in Double(100/titles.count) },
-                              labels: titles, colors: colors)
-                    .frame(width: size, height: size)
+                SpinWheelView(data: (0..<model.titles.count).map { _ in Double(100 / model.titles.count) },
+                              labels: model.titles, colors: model.colors)
+                    .frame(width: model.size, height: model.size)
                     .overlay(
-                        RoundedRectangle(cornerRadius: size/2).stroke(lineWidth: strokeWidth)
-                            .foregroundColor(strokeColor)
+                        RoundedRectangle(cornerRadius: model.size / 2)
+                            .stroke(lineWidth: model.strokeWidth)
+                            .foregroundColor(model.strokeColor)
                     )
                     .rotationEffect(.degrees(viewModel.degree))
                     .gesture(
@@ -62,7 +43,7 @@ public struct FortuneWheel: View {
                     )
                 SpinWheelBolt()
             }
-            SpinWheelPointer(pointerColor: pointerColor).offset(x: 0, y: -25)
+            SpinWheelPointer(pointerColor: model.pointerColor).offset(x: 0, y: -25)
         }
     }
 }

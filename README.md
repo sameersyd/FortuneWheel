@@ -30,7 +30,7 @@ pod 'FortuneWheel'
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/sameersyd/FortuneWheel.git", .upToNextMajor(from: "0.1.4"))
+    .package(url: "https://github.com/sameersyd/FortuneWheel.git", .upToNextMajor(from: "0.1.5"))
 ]
 ```
 
@@ -38,25 +38,35 @@ dependencies: [
 
 ## Sample Code 🌟 
 
-Import Fortune Wheel in your file
+Import Fortune Wheel in your file.
 ```ruby
 import FortuneWheel
 ```
 
+Create a `FortuneWheelModel` and pass it to the view.
 ```swift
 struct ContentView: View {
-	var players = ["Sameer", "Spikey", "Amelia", "Joan", "Karen", "Natalie"]
-	var body: some View {
-		ZStack {
-			FortuneWheel(titles: players, size: 320, onSpinEnd: { index in
-				// your action here - based on index
-			}, getWheelItemIndex: getWheelItemIndex)
-		}
-	}
-	
-	private func getWheelItemIndex() -> Int {
-		return index
-	}
+
+    private var players = ["Sameer", "Spikey", "Amelia", "Danny", "Karen", "Kathy"]
+    
+    var body: some View {
+        let model = FortuneWheelModel(
+            titles: players, size: 320,
+            onSpinEnd: onSpinEnd,
+            getWheelItemIndex: getWheelItemIndex
+        )
+        ZStack {
+            FortuneWheel(model: model)
+        }
+    }
+
+    private func onSpinEnd(index: Int) {
+        // your action here - based on index
+    }
+
+    private func getWheelItemIndex() -> Int {
+        return getIndexFromAPI()
+    }
 }
 ```
 
