@@ -32,15 +32,15 @@ public struct FortuneWheelModel {
         animation: Animation? = nil,
         getWheelItemIndex: (() -> (Int))? = nil
     ) {
-        self.titles = titles;
-        self.size = size;
-        self.onSpinEnd = onSpinEnd;
-        self.colors = colors ?? Color.spin_wheel_color;
-        self.pointerColor = pointerColor ?? Color(hex: "DA4533");
-        self.strokeWidth = strokeWidth;
-        self.strokeColor = strokeColor ?? Color(hex: "252D4F");
-        self.animDuration = animDuration;
-        self.animation = animation ?? Animation.timingCurve(0.51, 0.97, 0.56, 0.99, duration: animDuration);
-        self.getWheelItemIndex = getWheelItemIndex;
+        self.titles = titles
+        self.size = size
+        self.onSpinEnd = onSpinEnd
+        self.colors = colors ?? Color.spin_wheel_color
+        self.pointerColor = pointerColor ?? Color(hex: "DA4533")
+        self.strokeWidth = strokeWidth
+        self.strokeColor = strokeColor ?? Color(hex: "252D4F")
+        self.animDuration = animDuration
+        self.animation = animation ?? Animation.timingCurve(0.51, 0.97, 0.56, 0.99, duration: animDuration)
+        self.getWheelItemIndex = getWheelItemIndex
     }
 }
